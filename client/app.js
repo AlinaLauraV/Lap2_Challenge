@@ -25,9 +25,9 @@ function submitNote(e){
     e.preventDefault();
 
     const NoteData = {
-        name: e.target.name.value,
         title: e.target.title.value,
-        body: e.target.body.value
+        name: e.target.pseudonym.value,
+        bodyOfText: e.target.bodyOfText.value
     };
 
     const options = { 
@@ -64,9 +64,9 @@ function formatNoteTr(note, tr){
 
 
 
-    nameTd.textContent = note.name
-    titleTd.textContent = note.title
-    bodyTd.textContent = note.body
+    nameTd.textContent = note.title
+    titleTd.textContent = note.pseudonym
+    bodyTd.textContent = note.bodyOfText
 
     tr.append(nameTd)
     tr.append(titleTd)

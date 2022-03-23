@@ -3,9 +3,9 @@ const db = require('../dbConfig');
 module.exports = class Note {
     constructor(data){
         this.id = data.id;
-        this.name = data.name;
         this.title = data.title;
-        this.body = data.body;
+        this.pseudonym = data.pseudonym;
+        this.bodyOfText = data.bodyOfText;
     };
 
 static get all() {
@@ -32,10 +32,10 @@ static findById (id) {
     });
 }
 
-static create(name, title, body){
+static create(title, pseudonym, bodyOfText){
     return new Promise (async (resolve, reject) => {
         try {
-            let noteData = await db.query(`INSERT INTO post (name, title, body) VALUES ($1, $2, $3) RETURNING *;`, [ name, title, body ]);
+            let noteData = await db.query(`INSERT INTO post (title, pseudonym, bodyOfText) VALUES ($1, $2, $3) RETURNING *;`, [ title, pseudonym, bodyOfText ]);
             let newNote = new Note(noteData.rows[0]);
             resolve (newNote);
         } catch (err) {
