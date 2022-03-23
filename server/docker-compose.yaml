@@ -9,7 +9,7 @@ services:
       - type: bind
         source: ./client
         target: /code
-    command: bash -c "http-server"
+    
 
   server:
     image: node:12.18.4
