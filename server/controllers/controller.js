@@ -22,3 +22,12 @@ router.post("/", async (res, rej) => {
         rej('New post could not be added')
     }
 })
+
+router.get('/:id', async (res, rej) => {
+    try {
+        const published = await db.query('SELECT id FROM post')
+        res.json(published)
+    } catch (err) {
+        rej('Post unable to publish')
+    }
+})

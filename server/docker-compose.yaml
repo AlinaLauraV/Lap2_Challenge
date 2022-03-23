@@ -4,7 +4,7 @@ services:
     image: node:12.18.4
     working_dir: /code
     ports: 
-      - 3000:3000
+      - 4000:4000
     environment: 
       - PGUSER=futureproof
       - PGHOST=db
