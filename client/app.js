@@ -14,7 +14,7 @@ getAllNotes();
 
 // index
 function getAllNotes(){
-    fetch('http://localhost:3000/notes')
+    fetch('http://localhost:4000/notes')
         .then(r => r.json())
         .then(appendNotes)
         .catch(console.warn)
@@ -36,7 +36,7 @@ function submitNote(e){
         headers: { "Content-Type": "application/json" }
     };
 
-    fetch('http://localhost:3000/notes', options)
+    fetch('http://localhost:4000/notes', options)
         .then(r => r.json())
         .then(appendNote)
         .then(() => e.target.reset())
@@ -79,7 +79,7 @@ function formatNoteTr(note, tr){
 
 // MESSAGE FLOW
 function getMessage(){
-    fetch('http://localhost:3000')
+    fetch('http://localhost:4000')
         .then(r => r.text())
         .then(renderMessage)
         .catch(console.warn)

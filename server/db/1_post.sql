@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS post
+DROP TABLE IF EXISTS post;
+
 CREATE TABLE post (
 id serial,
 title varchar(100) NOT NULL,
